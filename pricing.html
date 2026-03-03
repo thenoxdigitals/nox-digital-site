@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>The Nox Digitals | Pricing & FAQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; scroll-behavior: smooth; }
+      :root {
+        --bg: #020617;
+        --card: #0f172a;
+        --border: #1e293b;
+        --text-primary: #e5e7eb;
+        --text-secondary: #9ca3af;
+        --accent: #3b82f6;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background: radial-gradient(circle at top left, #1e293b, #020617);
+        color: var(--text-primary);
+      }
+      .font-display { font-family: "Sora", sans-serif; }
+      .gradient-text {
+        background: linear-gradient(135deg, #3b82f6, #06b6d4, #a855f7);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .card {
+        background: var(--card);
+        border-radius: 1rem;
+        border: 1px solid var(--border);
+      }
+      .btn-primary {
+        border-radius: 999px;
+        padding: 0.7rem 1.6rem;
+        background: linear-gradient(135deg, #3b82f6, #0ea5e9);
+        color: #fff;
+        font-size: 0.9rem;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        border: none;
+      }
+      .btn-secondary {
+        border-radius: 999px;
+        padding: 0.7rem 1.6rem;
+        border: 1px solid #475569;
+        background: transparent;
+        color: #e5e7eb;
+        font-size: 0.9rem;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+      .nav-link {
+        font-size: 0.8rem;
+        color: #cbd5f5;
+      }
+      .nav-link-active {
+        color: #ffffff;
+      }
+      .fade-up {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+      }
+      .fade-up.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      details {
+        background: #020617;
+        border-radius: 0.8rem;
+        border: 1px solid #1e293b;
+        padding: 0.7rem 0.9rem;
+      }
+      summary {
+        cursor: pointer;
+        list-style: none;
+      }
+      summary::-webkit-details-marker {
+        display: none;
+      }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+    </style>
+  </head>
+
+  <body class="text-slate-100">
+    <!-- NAV -->
+    <nav class="fixed top-0 inset-x-0 z-40 bg-slate-950/80 border-b border-slate-800 backdrop-blur">
+      <div class="w-full max-w-full px-6 py-3 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center">
+            <span class="font-display text-[10px] tracking-[0.12em]">NOX</span>
+          </div>
+          <span class="font-display text-sm font-semibold">
+            THE NOX<span class="text-blue-500">.</span>DIGITALS
+          </span>
+        </a>
+
+        <div class="hidden sm:flex gap-5 items-center">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="pricing.html" class="nav-link nav-link-active">Pricing & FAQ</a>
+          <a href="contact.html" class="btn-primary">Contact</a>
+        </div>
+
+        <button
+          id="menu-button"
+          class="sm:hidden inline-flex items-center justify-center w-9 h-9 rounded-lg border border-slate-700 text-slate-200"
+          aria-label="Open navigation"
+        >
+          <span class="sr-only">Toggle navigation</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <div id="mobile-menu" class="sm:hidden hidden border-t border-slate-800 bg-slate-950/95">
+        <div class="px-6 py-3 flex flex-col gap-2 text-sm">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="pricing.html" class="nav-link nav-link-active">Pricing & FAQ</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="pt-24 pb-16 text-sm text-slate-400">
+      <!-- INTRO -->
+      <section class="w-full max-w-full px-6 fade-up">
+        <p class="text-xs text-emerald-300 uppercase tracking-[0.22em]">Pricing</p>
+        <h1 class="font-display text-3xl sm:text-4xl lg:text-5xl mt-3 text-slate-100">
+          Transparent pricing for <span class="gradient-text">local businesses</span>.
+        </h1>
+        <p class="max-w-3xl mt-3">
+          Every project is a bit different, but these ranges show what most clients invest. After a short call we’ll send a custom quote that fits your scope and timeline.
+        </p>
+      </section>
+
+      <!-- PRICING CARDS -->
+      <section class="w-full max-w-full px-6 mt-16 fade-up">
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="card p-4 flex flex-col justify-between">
+            <div>
+              <p class="text-slate-100 font-medium mb-1 text-sm">Starter Site</p>
+              <p class="text-2xl font-display text-slate-100 mb-1">₹xx,xxx</p>
+              <p class="text-xs text-slate-400 mb-2">Perfect for new cafés, salons, clinics and studios.</p>
+              <ul class="list-disc list-inside">
+                <li>Up to 4 pages</li>
+                <li>Responsive design</li>
+                <li>Basic SEO & analytics</li>
+                <li>Contact & WhatsApp CTA</li>
+              </ul>
+            </div>
+            <div class="mt-4">
+              <a href="contact.html" class="btn-secondary">Book a call</a>
+            </div>
+          </div>
+
+          <div class="card p-4 border-emerald-500/60">
+            <div>
+              <p class="text-emerald-300 text-xs font-semibold mb-1">Most popular</p>
+              <p class="text-slate-100 font-medium mb-1 text-sm">Growth Site</p>
+              <p class="text-2xl font-display text-slate-100 mb-1">₹xx,xxx – xx,xxx</p>
+              <p class="text-xs text-slate-400 mb-2">For growing businesses that need more pages and better SEO.</p>
+              <ul class="list-disc list-inside">
+                <li>Up to 8 pages</li>
+                <li>Blog / updates section</li>
+                <li>Deeper SEO & speed work</li>
+                <li>Lead & enquiry funnels</li>
+                <li>Launch support & 1 month tweaks</li>
+              </ul>
+            </div>
+            <div class="mt-4">
+              <a href="contact.html" class="btn-primary">Get custom quote</a>
+            </div>
+          </div>
+
+          <div class="card p-4 flex flex-col justify-between">
+            <div>
+              <p class="text-slate-100 font-medium mb-1 text-sm">Premium Site</p>
+              <p class="text-2xl font-display text-slate-100 mb-1">₹xx,xxx+</p>
+              <p class="text-xs text-slate-400 mb-2">For brands that need fully custom design and funnels.</p>
+              <ul class="list-disc list-inside">
+                <li>Custom layouts & animations</li>
+                <li>Multiple landing pages</li>
+                <li>Advanced tracking & integrations</li>
+                <li>Ongoing optimisation plan</li>
+              </ul>
+            </div>
+            <div class="mt-4">
+              <a href="contact.html" class="btn-secondary">Discuss your plan</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- COMPARISON TABLE -->
+      <section class="w-full max-w-full px-6 mt-16 fade-up">
+        <h2 class="font-display text-2xl lg:text-3xl mb-3 text-slate-100">What’s included in each plan.</h2>
+        <div class="overflow-x-auto text-xs">
+          <table class="min-w-full border border-slate-800 text-left">
+            <thead class="bg-slate-900/70 text-slate-300">
+              <tr>
+                <th class="px-3 py-2 border-b border-slate-800">Feature</th>
+                <th class="px-3 py-2 border-b border-slate-800">Starter</th>
+                <th class="px-3 py-2 border-b border-slate-800">Growth</th>
+                <th class="px-3 py-2 border-b border-slate-800">Premium</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="px-3 py-2 border-b border-slate-800">Pages</td>
+                <td class="px-3 py-2 border-b border-slate-800">Up to 4</td>
+                <td class="px-3 py-2 border-b border-slate-800">Up to 8</td>
+                <td class="px-3 py-2 border-b border-slate-800">Unlimited (within scope)</td>
+              </tr>
+              <tr>
+                <td class="px-3 py-2 border-b border-slate-800">Mobile responsive</td>
+                <td class="px-3 py-2 border-b border-slate-800">Yes</td>
+                <td class="px-3 py-2 border-b border-slate-800">Yes</td>
+                <td class="px-3 py-2 border-b border-slate-800">Yes</td>
+              </tr>
+              <tr>
+                <td class="px-3 py-2 border-b border-slate-800">SEO depth</td>
+                <td class="px-3 py-2 border-b border-slate-800">Basic</td>
+                <td class="px-3 py-2 border-b border-slate-800">Intermediate</td>
+                <td class="px-3 py-2 border-b border-slate-800">Advanced</td>
+              </tr>
+              <tr>
+                <td class="px-3 py-2 border-b border-slate-800">Blog / articles</td>
+                <td class="px-3 py-2 border-b border-slate-800">No</td>
+                <td class="px-3 py-2 border-b border-slate-800">Optional</td>
+                <td class="px-3 py-2 border-b border-slate-800">Yes</td>
+              </tr>
+              <tr>
+                <td class="px-3 py-2 border-b border-slate-800">Launch support</td>
+                <td class="px-3 py-2 border-b border-slate-800">Basic</td>
+                <td class="px-3 py-2 border-b border-slate-800">1 month tweaks</td>
+                <td class="px-3 py-2 border-b border-slate-800">Custom plan</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="w-full max-w-full px-6 mt-16 fade-up">
+        <h2 class="font-display text-2xl lg:text-3xl mb-3 text-slate-100">Frequently asked questions.</h2>
+        <div class="space-y-3 max-w-3xl">
+          <details>
+            <summary class="text-slate-100 text-sm mb-1">How long does a website project take?</summary>
+            <p class="mt-1 text-xs text-slate-400">Most Starter sites launch in 1–2 weeks. Growth and Premium projects usually take 3–6 weeks depending on content and feedback speed.</p>
+          </details>
+          <details>
+            <summary class="text-slate-100 text-sm mb-1">Do you help with content and images?</summary>
+            <p class="mt-1 text-xs text-slate-400">Yes. We guide you on what to write, help refine your copy, and suggest image styles. We can also work with your existing photos.</p>
+          </details>
+          <details>
+            <summary class="text-slate-100 text-sm mb-1">Do I need to buy hosting and domain?</summary>
+            <p class="mt-1 text-xs text-slate-400">We’ll advise you on domain options and hosting. If you already have them, we will connect everything for you.</p>
+          </details>
+          <details>
+            <summary class="text-slate-100 text-sm mb-1">Will my website appear on Google?</summary>
+            <p class="mt-1 text-xs text-slate-400">We set up basic SEO and submit your site to Google. Ranking depends on competition and content, but we design with search in mind.</p>
+          </details>
+          <details>
+            <summary class="text-slate-100 text-sm mb-1">Can you redesign my current website?</summary>
+            <p class="mt-1 text-xs text-slate-400">Yes. We can migrate content, keep what works, and rebuild the design and structure for better performance.</p>
+          </details>
+          <details>
+            <summary class="text-slate-100 text-sm mb-1">Do you offer ongoing support?</summary>
+            <p class="mt-1 text-xs text-slate-400">We offer support plans for updates, new pages, and growth work. Or you can request changes as needed.</p>
+          </details>
+          <details>
+            <summary class="text-slate-100 text-sm mb-1">Can we pay in parts?</summary>
+            <p class="mt-1 text-xs text-slate-400">Most projects use a 50% upfront / 50% on launch model. For bigger projects we can break this into more milestones.</p>
+          </details>
+          <details>
+            <summary class="text-slate-100 text-sm mb-1">What tools and platforms do you use?</summary>
+            <p class="mt-1 text-xs text-slate-400">We pick tools based on your needs — usually modern stacks that are easy to maintain and fast to load.</p>
+          </details>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="w-full max-w-full px-6 mt-16 fade-up">
+        <div class="card p-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div>
+            <h2 class="font-display text-2xl lg:text-3xl mb-1 text-slate-100">Not sure which plan fits?</h2>
+            <p>Tell us about your business and we’ll suggest a realistic budget and plan in plain language.</p>
+          </div>
+          <a href="contact.html" class="btn-primary">
+            <span>Talk to us</span><span>↗</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-800 py-5 mt-10 bg-slate-950/80">
+      <div class="w-full max-w-full px-6 text-[11px] text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <span>© 2024 The Nox Digitals.</span>
+        <span>Pricing built for local businesses, not big agencies.</span>
+      </div>
+    </footer>
+
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+      document.querySelectorAll(".fade-up").forEach((el) => observer.observe(el));
+
+      const menuButton = document.getElementById("menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+      if (menuButton && mobileMenu) {
+        menuButton.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+      }
+    </script>
+  </body>
+</html>
