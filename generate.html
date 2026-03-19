@@ -370,7 +370,7 @@
 
         wrapper.innerHTML = `
           <div class="max-w-[80%] rounded-2xl bg-[#0F52BA] px-4 py-2.5 text-sm text-white shadow">
-            ${text.replace(/\n/g, '<br>')}
+            ${text.replace(/\\\\\\\\n/g, '<br>')}
           </div>
           <div class="mt-1 flex h-7 w-7 items-center justify-center rounded-full bg-gray-200 text-[11px] font-semibold text-[#0B1F3A]">
             You
@@ -417,29 +417,8 @@
         }
       }
 
-      /* COMPLETELY MINIMAL PREVIEW HTML (no header / prompt text) */
-      function generateMockHtml(prompt) {
-        return `
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Generated site – Nox AI</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body class="min-h-screen bg-white">
-  </body>
-</html>
-        `;
-      }
-
-      function updatePreview(html) {
-        const doc = previewFrame.contentDocument || previewFrame.contentWindow.document;
-        doc.open();
-        doc.write(html);
-        doc.close();
-      }
-
+      // For now we remove generateMockHtml and related preview injection,
+      // so the chat only shows messages and you can wire your own API call here.
       chatForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const prompt = userInput.value.trim();
@@ -449,18 +428,9 @@
         userInput.value = '';
         setLoadingState(true);
 
+        // TODO: call your backend / Perplexity API here, then:
         setTimeout(() => {
-          appendBotMessage(`
-            I’ve prepared an empty preview shell. Use <span class="font-semibold text-[#0F52BA]">Show code</span> to see the HTML you’ll replace with your own AI‑generated markup.
-          `);
-
-          const html = generateMockHtml(prompt);
-          codeOutput.textContent = html;
-          updatePreview(html);
-
-          codePanel.classList.remove('hidden');
-          toggleCodeLabel.textContent = 'Hide code';
-
+          appendBotMessage('Your generation logic will appear here once hooked to the API.');
           setLoadingState(false);
         }, 700);
       });
